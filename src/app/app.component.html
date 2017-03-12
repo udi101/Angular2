@@ -1,3 +1,29 @@
-<h1>
-  {{title}}
-</h1>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="navbar-header navbar-right">
+        <ul class="nav navbar-nav" style="margin-right: 10px">
+          <li>
+            <a *ngIf="!authService.isAuthenticated()" [routerLink]="['User/Login']">Login</a>
+            <a *ngIf="authService.isAuthenticated()" class="active">Welcome Udi</a></li>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="'Worker'" routerLinkActive="active">Worker</a> </li>
+        <li><a [routerLink]="'Grandfather'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Grandfather</a></li>
+        <li><a [routerLink]="'Food'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Food</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"
+            [ngClass]="{active: checkActive()}">User<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a [routerLink]="'User/Profile'">Profile</a></li>
+              <li><a [routerLink]="'User/Login'">Login</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

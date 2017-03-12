@@ -1,0 +1,14 @@
+.navbar-inverse {
+  background: linear-gradient(#4070c0, #204070)
+}
+
+li>a.active {
+  color: #ffffff;
+  /*font-weight: bold;*/
+  text-shadow: 3px 3px 1px #303030;
+}
+
+li>a.dropdown-toggle {
+    cursor: pointer;
+    background: linear-gradient(#4070c0, #204070)
+}
