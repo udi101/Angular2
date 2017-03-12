@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-12">
+    This is the workerList Component
+    <i class="glyphicon glyphicon-apple" style="color:darkslateblue"></i>
+  </div>
+</div><br />
+<div class="row">
+  <div class="col-sm-5">
+    <table class="table table-condensed table-condensed">
+      <thead>
+        <tr>
+          <th>workerName</th>
+          <th>workerAge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let worker of workers">
+          <td>{{worker.workerName}}</td>
+          <td>{{worker.workerAge}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row" [hidden]="false" style="margin-bottom: 7px">
+  <div class="col-sm-10">
+    <div class="btn-group btn-group-sm">
+      <button class="btn btn-sm btn-primary" (click)="increaseAge()">Increase Age
+    <i class="glyphicon glyphicon-plus"></i></button>
+      <button class="btn btn-sm btn-primary" (click)="decreaseAge()">Decrease Age
+    <i class="glyphicon glyphicon-minus"></i></button>
+      <button class="btn btn-sm btn-success" (click)="setAge(25)">Set Age</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-sm btn-default" (click)="GoToWorker3()">Navigate by code</button>
+    <div class="col-sm-12" style="height:30px"></div>
+  </div>
+</div>

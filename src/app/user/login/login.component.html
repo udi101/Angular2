@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h4>Login Form</h4>
+</div>
+<div class="col-sm-3">
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
+  <div class="form-group">
+    <label for="userName" class="control-label">Username</label>
+    <em *ngIf="loginForm.controls.userName?.invalid">Required</em>
+    <input type="text" #userName=ngModel ngModel class="form-control" name="userName" id="userName" required>
+  </div>
+  <div class="form-group">
+    <label for="password" class="control-label">Password</label>
+    <em>Required</em>
+    <input type="text" #password=ngModel ngModel class="form-control input-sm" name="password" id="password" required>
+  </div>
+  <button class="btn btn-sm btn-primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+  <button type="reset" class="btn btn-sm btn-default" (click)="cancelLogin()">Cancel</button>
+</form>
+</div>
+UserName.Valid: {{userName.valid}} <br />
+UserName.Dirty: {{userName.dirty}} <br />
+UserName.Touched: {{userName.touched}} <br />

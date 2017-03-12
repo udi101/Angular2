@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-header">
+      <h4>GrandChild Component: {{title}}</h4>
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="col-sm-7">
+          <input type="text" #message class="form-control input-sm">
+      </div>
+      <button class="btn btn-sm btn-success" (click)="setMessage(message.value)">Set grandChild message</button>
+  </div>
+</div>

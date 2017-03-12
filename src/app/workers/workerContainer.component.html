@@ -1,0 +1,22 @@
+<div class="page-header">
+   This is the Container component {{id}}
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <workerList #workerList></workerList>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-5">
+    <div class="btn-group">
+      <button class="btn btn-sm btn-primary" (click)="workerList.increaseAge()">Increase Age
+    <i class="glyphicon glyphicon-plus"></i></button>
+      <button class="btn btn-sm btn-primary" (click)="workerList.decreaseAge()">Decrease Age
+    <i class="glyphicon glyphicon-minus"></i></button>
+    <button class="btn btn-sm btn-success" (click)="workerList.setAge(25)" >Set Age</button>
+    <button class="btn btn-sm btn-default" (click)="setWorkerAge(workerList)" >Set Age</button>
+    </div>
+  </div>
+</div>
