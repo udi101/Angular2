@@ -17,7 +17,7 @@ export class FoodComponent implements OnInit {
     this.subscription = this.foodService.foodList$.subscribe(
       data =>{ setTimeout(function(){
         console.log("This is " + data);
-      },1000); 
+      },1500); 
         })
   }
 

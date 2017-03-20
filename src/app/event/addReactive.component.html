@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h4>Reactive Form Event</h4>
+</div>
+<div class="row">
+  <form [formGroup]="addReactiveForm" (ngSubmit)="save(addReactiveForm.value)" novalidate autocomplete="off">
+    <div class="col-sm-3">
+      <div class="form-group" [class.has-error]="eventName.invalid && eventName.touched">
+        <label for="eventName" class="control-label">Event Name</label>
+        <em *ngIf="eventName?.errors?.required && eventName?.touched">* Required</em>
+        <em *ngIf="eventName?.errors?.pattern && eventName?.touched">* Digits not allowed</em>
+        <em *ngIf="eventName?.errors?.minlength && eventName?.touched">* Min Length is 2</em>
+        <em *ngIf="eventName?.errors?.restrictedWords && eventName?.touched">Restricted Words: udi</em>
+        <input formControlName="eventName" type="text" id="eventName" class="form-control input-sm">
+      </div>
+      <div class="form-group" [class.has-error]="addReactiveForm.controls.startDate?.errors?.required && 
+                        addReactiveForm.controls.startDate?.touched">
+        <label for="startDate" class="control-label">Start Date</label>
+        <em *ngIf="addReactiveForm.controls.startDate?.errors?.required && 
+                        addReactiveForm.controls.startDate?.touched">* Required</em>
+        <input type="date" formControlName="startDate" id="startDate" class="form-control input-sm">
+      </div>
+      <div class="form-group">
+        <label for="endDate" class="control-label">End Date</label>
+        <input type="date" formControlName="endDate" id="endDate" class="form-control input-sm">
+      </div>
+      <button class="btn btn-sm btn-primary" [disabled]="addReactiveForm.invalid">Submit</button>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="form-group">
+        <label for="city" class="control-label">City</label>
+        <input type="text" formControlName="city" id="city" class="form-control input-sm">
+      </div>
+      <div class="form-group">
+        <label for="street" class="control-label">Street</label>
+        <input type="text" formControlName="street" id="street" class="form-control input-sm">
+      </div>
+      <div class="form-group">
+        <label for="streetNumber" class="control-label">Street Number</label>
+        <input type="text" formControlName="streetNumber" id="streetNumber" class="form-control input-sm">
+      </div>
+    </div>
+  </form>
+</div>
+{{addReactiveForm.value | json}}

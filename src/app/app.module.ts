@@ -54,10 +54,11 @@ import { FoodComponent } from './food/food.component';
       {
         path: 'Worker/:id', component: WorkerContainerComponent,
         canActivate: [RouteGuardService],
-        resolve: {workers : RouteGuardService}
+        resolve: { workers: RouteGuardService }
       },
-      { path: 'Food', component: FoodComponent },
+      { path: 'Food', component: FoodComponent},
       { path: 'User', loadChildren: 'app/user/user.module#UserModule' },   // טעינת ניווט משני
+      { path: 'Event', loadChildren: 'app/event/event.module#EventsModule' },  // טעינת ניווט משני
       { path: '', component: WorkerContainerComponent, canActivate: [RouteGuardService] },
       { path: '**', component: P404Component, canActivate: [RouteGuardService] }
     ])

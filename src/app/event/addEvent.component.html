@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h4>{{title}}</h4>
+</div>
+<div class="row">
+  <form #addEventForm=ngForm novalidate autocomplete="off" (ngSubmit)="addEvent(addEventForm.value)">
+    <div class="col-sm-3">
+      <div class="form-group" [class.has-error]="eventName.invalid&&eventName.touched">
+        <label for="eventName" class="control-label">Event Name</label>
+        <em *ngIf="eventName.invalid && eventName.touched">* Required</em>
+        <input type="text" class="form-control input-sm" #eventName=ngModel ngModel name="eventName" id="eventName" required>
+      </div>
+      <div class="form-group" [class.has-error]="startDate.invalid && startDate.touched">
+        <label for="startDate" class="control-label">Start Date</label>
+        <em *ngIf="startDate.invalid && startDate.touched">* Required</em>
+        <input type="date" class="form-control input-sm" #startDate=ngModel ngModel name="startDate" id="startDate" required>
+      </div>
+      <div class="form-group" [class.has-error]="endDate?.invalid && endDate?.touched">
+        <label for="endDate" class="control-label">End Date</label>
+        <em *ngIf="endDate.invalid && endDate?.touched">* Required</em>
+        <input type="date" class="form-control input-sm" #endDate=ngModel ngModel name="endDate" id="endDate" required>
+      </div>
+      <button type="submit" class="btn btn-sm btn-primary" [disabled]="addEventForm.invalid">Submit Form</button>
+      <button type="reset" class="btn btn-sm btn-default" (click)="exitForm()">Cancel</button>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      <div ngModelGroup="location">
+        <div class="form-group" [class.has-error]="city.invalid&&city.touched">
+          <label for="city" class="control-label">City</label>
+          <em *ngIf="city?.invalid&&city?.touched">* Required</em>
+          <input type="text" #city=ngModel ngModel name="city" id="city" required class="form-control input-sm">
+        </div>
+        <div class="form-group" [class.has-error]="street?.invalid&&street.touched">
+          <label for="" class="control-label">Street</label>
+          <em *ngIf="street?.errors?.required&&street.touched">* Required</em>
+          <em *ngIf="street?.errors?.pattern&&street.touched">* Cannot contain Digits</em>
+          <input type="text" #street=ngModel ngModel name="street" id="street"
+            class="form-control input-sm" required pattern="^[^\d]*$">
+        </div>
+        <div class="form-group" [class.has-error]="streetNumber.invalid&&streetNumber.touched">
+          <label for="streetNumber" class="control-label">Street Number</label>
+          <em *ngIf="streetNumber?.invalid&&streetNumber?.touched">* Required</em>
+          <input type="number" #streetNumber="ngModel" ngModel id="streetNumber" name="streetNumber" class="form-control input-sm"
+            required>
+        </div>    </div>
+      </div>
+
+  </form>
+</div>

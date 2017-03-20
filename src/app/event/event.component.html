@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h4>Event Component</h4>
+  This is template events form collecting data page
+</div>
+<div class="row">
+  <div class="containerDiv col-sm-3" *ngFor="let item of events">
+    <div class="eventDiv">
+      <div><strong>Event Name:</strong> {{item.eventName}}</div>
+      <div><strong>Start Date:</strong> {{item.startDate | date: 'dd/MM/yyyy hh:mm'}}</div>
+      <div><strong>End Date:</strong> {{item.endDate | date: 'dd/MM/yyyy hh:mm'}}</div>
+      <div style="color:#505050;text-decoration: underline"><strong>Location:</strong></div>
+      <div><strong>City:</strong> {{item.location.city}}</div>
+      <div><strong>Street:</strong> {{item.location.street}}</div>
+      <div><strong>Number:</strong> {{item.location.streetNumber}}</div>
+    </div>
+  </div>
+</div> 

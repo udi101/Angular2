@@ -1,11 +1,13 @@
 <div class="page-header">
   <h4>This is Food Component</h4>
+  this is an example of using Observables and Subjects to get data from service.
 </div>
 <div class="row">
-  <div class="col-sm-12">
-    <div class="form-group">
-      <input type="text" class="input-sm" #food>
-      <button class="btn btn-sm btn-primary" (click)="sendFood(food.value)">Send Food</button>
-    </div>
-  </div>
+  <div class="col-sm-3">
+<div class="form-group">
+  <label for="food" class="control-label">RxJs Subject Communication</label>
+  <input type="text" class="form-control input-sm" id="food" #food>
+</div>
+<button class="btn btn-sm btn-primary" (click)="sendFood(food.value)">Send Food</button>
+</div>
 </div>

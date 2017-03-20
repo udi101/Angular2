@@ -1,0 +1,8 @@
+em {
+  float: right;
+  color: #f00000;
+}
+
+input.error {
+  background-color: #FFF5F5;
+}
