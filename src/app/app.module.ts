@@ -5,12 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
-
 //services
 import { WorkerService } from './core/worker.service';
 import { AuthService } from './user/auth.service';
 
 //  Components
+import { NestedComponent } from './Nested/nested.component'
 import {
   GrandFatherComponent,
   FatherComponent,
@@ -37,7 +37,8 @@ import { FoodComponent } from './food/food.component';
     FatherComponent,
     GrandchildComponent,
     P404Component,
-    FoodComponent
+    FoodComponent,
+    NestedComponent
   ],
   imports: [
     BrowserModule,
@@ -56,9 +57,10 @@ import { FoodComponent } from './food/food.component';
         canActivate: [RouteGuardService],
         resolve: { workers: RouteGuardService }
       },
-      { path: 'Food', component: FoodComponent},
+      { path: 'Food', component: FoodComponent },
       { path: 'User', loadChildren: 'app/user/user.module#UserModule' },   // טעינת ניווט משני
       { path: 'Event', loadChildren: 'app/event/event.module#EventsModule' },  // טעינת ניווט משני
+      { path: 'Nested', component: NestedComponent },
       { path: '', component: WorkerContainerComponent, canActivate: [RouteGuardService] },
       { path: '**', component: P404Component, canActivate: [RouteGuardService] }
     ])
@@ -78,10 +80,9 @@ import { FoodComponent } from './food/food.component';
 export class AppModule { }
 
 
-function canDeactivateWorkerFunction(component: WorkerContainerComponent): boolean {
+export function canDeactivateWorkerFunction(component: WorkerContainerComponent): boolean {
   if (component.isDirty)  // מאפשר יציאה  
     return window.confirm("Are you sure you want to exit?");
   else
     return true;
 }
-

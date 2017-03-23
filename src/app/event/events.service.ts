@@ -19,6 +19,7 @@ const EVENTS: Array<IEvent> = [
         eventName: 'Mother\'s Birthday',
         startDate: new Date('02/02/2012'),
         endDate: new Date('02/02/2012'),
+        eventPrice:160,
         location:{
             city:'Tel-Aviv',
             street: 'Arlozerov',
@@ -29,6 +30,7 @@ const EVENTS: Array<IEvent> = [
         eventName: 'RXJS Congress',
         startDate: new Date('02/28/1947'),
         endDate: new Date('03/01/2017'),
+        eventPrice:120,
         location: {
             city: 'Tel-Aviv',
             street: 'LaGuardia',
@@ -39,6 +41,7 @@ const EVENTS: Array<IEvent> = [
         eventName: 'Job Interview tips',
         startDate: new Date('02/03/2017'),
         endDate: new Date('03/03/2017'),
+        eventPrice:150,
         location: {
             city: 'Holon',
             street: 'Hamelacha',

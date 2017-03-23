@@ -1,17 +1,25 @@
 <div class="page-header">
   <h4>Event Component</h4>
-  This is template events form collecting data page
+  Implements ng-content and resolving child component functuin from father component
 </div>
 <div class="row">
   <div class="containerDiv col-sm-3" *ngFor="let item of events">
-    <div class="eventDiv">
-      <div><strong>Event Name:</strong> {{item.eventName}}</div>
-      <div><strong>Start Date:</strong> {{item.startDate | date: 'dd/MM/yyyy hh:mm'}}</div>
-      <div><strong>End Date:</strong> {{item.endDate | date: 'dd/MM/yyyy hh:mm'}}</div>
-      <div style="color:#505050;text-decoration: underline"><strong>Location:</strong></div>
-      <div><strong>City:</strong> {{item.location.city}}</div>
-      <div><strong>Street:</strong> {{item.location.street}}</div>
-      <div><strong>Number:</strong> {{item.location.streetNumber}}</div>
+    <!--שליחה של מצביע לקומפוננט להפעלת פונקציה שלו-->
+    <div class="eventDiv" (click)="toggleEvent(eventName)">
+      <collapseable-event #eventName [eventName]="item.eventName">
+        <div eventTitle><strong>Event Name: {{item.eventName | uppercase}}</strong>
+          <i *ngIf="item.location.city == 'Tel-Aviv'" class="glyphicon glyphicon-fire fire"></i>
+        </div>
+        <div eventBody>
+          <div><strong>Start Date:</strong> {{item.startDate | date: 'dd/MM/yyyy hh:mm'}}</div>
+          <div><strong>End Date:</strong> {{item.endDate | date: 'dd/MM/yyyy hh:mm'}}</div>
+          <div><strong>Price:</strong>{{item.eventPrice | currency:'ILS':true}}</div>
+          <div style="color:#505050;text-decoration: underline"><strong>Location:</strong></div>
+          <div><strong>City:</strong> {{item.location.city}}</div>
+          <div><strong>Street:</strong> {{item.location.street | street}}</div>
+          <div><strong>Number:</strong> {{item.location.streetNumber}}</div>
+        </div>
+      </collapseable-event>
     </div>
   </div>
-</div> 
+</div>

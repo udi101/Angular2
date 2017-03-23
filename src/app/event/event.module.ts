@@ -4,14 +4,21 @@ import { SharedModule } from './../shared/shared.module';  // forms, reactive, c
 
 // Components
 import { EventComponent } from './event.component';
+import { CollapseableEventComponent } from './collapseableEvent.component';
 import { AddEvent } from './addEvent.component';
 import { AddReactiveComponent } from './addReactive.component';
+
+// Pipes
+import { StreetPipe } from './street.pipe';
+
 
 @NgModule({
     declarations: [
         EventComponent,
         AddEvent,
-        AddReactiveComponent
+        AddReactiveComponent,
+        CollapseableEventComponent,
+        StreetPipe,
     ],
     imports: [
         SharedModule,

@@ -13,4 +13,7 @@ export class EventComponent implements OnInit {
   ngOnInit() {
     this.events = this.eventService.getEvents();
   }
+  toggleEvent(eventi:any):void{
+    eventi.toggleEvent();
+  }
 }
