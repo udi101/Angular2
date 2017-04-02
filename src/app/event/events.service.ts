@@ -47,5 +47,38 @@ const EVENTS: Array<IEvent> = [
             street: 'Hamelacha',
             streetNumber: 6
         }
+    },
+    {
+        eventName: 'Job Interview tips',
+        startDate: new Date('02/03/2017'),
+        endDate: new Date('03/03/2017'),
+        eventPrice:150,
+        location: {
+            city: 'Holon',
+            street: 'Hamelacha',
+            streetNumber: 6
+        }
+    },
+    {
+        eventName: 'Job Interview tips',
+        startDate: new Date('02/03/2017'),
+        endDate: new Date('03/03/2017'),
+        eventPrice:150,
+        location: {
+            city: 'Holon',
+            street: 'Hamelacha',
+            streetNumber: 6
+        }
+    },
+    {
+        eventName: 'Job Interview tips',
+        startDate: new Date('02/03/2017'),
+        endDate: new Date('03/03/2017'),
+        eventPrice:150,
+        location: {
+            city: 'Tel-Aviv',
+            street: 'Hamelacha',
+            streetNumber: 6
+        }
     }
 ]

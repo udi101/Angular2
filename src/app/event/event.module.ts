@@ -8,6 +8,8 @@ import { CollapseableEventComponent } from './collapseableEvent.component';
 import { AddEvent } from './addEvent.component';
 import { AddReactiveComponent } from './addReactive.component';
 
+
+
 // Pipes
 import { StreetPipe } from './street.pipe';
 
@@ -31,4 +33,4 @@ import { StreetPipe } from './street.pipe';
     exports: [],
     providers: []
 })
-export class EventsModule { }
+export class EventsModule { } 

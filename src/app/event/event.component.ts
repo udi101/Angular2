@@ -4,16 +4,16 @@ import { EventsService } from './events.service';
 @Component({
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css'],
-  providers:[EventsService]
+  providers: [EventsService]
 })
 export class EventComponent implements OnInit {
   events: Array<IEvent>;
-  constructor(private eventService:EventsService) { }
+  constructor(private eventService: EventsService) { }
 
   ngOnInit() {
     this.events = this.eventService.getEvents();
   }
-  toggleEvent(eventi:any):void{
+  toggleEvent(eventi: any): void {
     eventi.toggleEvent();
   }
 }
