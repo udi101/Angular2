@@ -3,5 +3,4 @@ import {Directive} from '@angular/core';
     selector:"[highlight]"
 })
 export class HighlightDirective{
-    t:string = "udi mazor";
 }
