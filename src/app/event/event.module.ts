@@ -8,7 +8,8 @@ import { CollapseableEventComponent } from './collapseableEvent.component';
 import { AddEvent } from './addEvent.component';
 import { AddReactiveComponent } from './addReactive.component';
 
-
+//Directives
+import { ExcludeDirective } from './exclude.directive';
 
 // Pipes
 import { StreetPipe } from './street.pipe';
@@ -21,6 +22,7 @@ import { StreetPipe } from './street.pipe';
         AddReactiveComponent,
         CollapseableEventComponent,
         StreetPipe,
+        ExcludeDirective
     ],
     imports: [
         SharedModule,

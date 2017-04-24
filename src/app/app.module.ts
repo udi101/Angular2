@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import { BootstrapModule } from './common/bootstrap.module';
 
 //services
 import { WorkerService } from './core/worker.service';
@@ -17,15 +18,24 @@ import {
   GrandchildComponent
 } from './grandfather/index';
 
+
+// Directives
+import { HighlightDirective } from './nested/highlight.directive';
+
+// jQuery Service
+export declare let jQuery: any; 
+import { JQ_TOKEN } from './common/index';
+
 import {
   WorkerContainerComponent,
   WorkerListComponent
-} from './workers/index'
+} from './workers/index';
 
 // Guards
 import { RouteGuardService } from './core/routeGuard.service';
 import { P404Component } from './404/p404.component';
 import { FoodComponent } from './food/food.component';
+
 
 
 @NgModule({
@@ -38,9 +48,11 @@ import { FoodComponent } from './food/food.component';
     GrandchildComponent,
     P404Component,
     FoodComponent,
-    NestedComponent
+    NestedComponent,
+    HighlightDirective
   ],
   imports: [
+    BootstrapModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -61,6 +73,7 @@ import { FoodComponent } from './food/food.component';
       { path: 'User', loadChildren: 'app/user/user.module#UserModule' },   // טעינת ניווט משני
       { path: 'Event', loadChildren: 'app/event/event.module#EventsModule' },  // טעינת ניווט משני
       { path: 'Nested', component: NestedComponent },
+      { path: 'Bootstrap', loadChildren: 'app/common/bootstrap.module#BootstrapModule' },
       { path: '', component: WorkerContainerComponent, canActivate: [RouteGuardService] },
       { path: '**', component: P404Component, canActivate: [RouteGuardService] }
     ])
@@ -69,10 +82,8 @@ import { FoodComponent } from './food/food.component';
     RouteGuardService,
     AuthService,
     WorkerService,
-    {
-      provide: 'canDeactivateWorker',
-      useValue: canDeactivateWorkerFunction
-    },
+    { provide: JQ_TOKEN, useValue: jQuery },
+    { provide: 'canDeactivateWorker', useValue: canDeactivateWorkerFunction },
   ],
   bootstrap: [AppComponent]
 })

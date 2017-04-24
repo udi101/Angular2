@@ -2,12 +2,16 @@ import { Injectable,EventEmitter } from '@angular/core';
 
 @Injectable()
 export class NestedService {
+    counter:number = 0;
     constructor() { }
 
-    getName():any{
+    getName():EventEmitter<number>{
         let emiter = new EventEmitter(true);
         // emiter.emit(UserName);
-        setTimeout(()=>emiter.emit(UserName), 2000);
+        setInterval(()=>{
+            emiter.emit(this.counter);
+            this.counter += 1;
+        },1000)
         return(emiter);
     }
 }

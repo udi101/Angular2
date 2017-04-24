@@ -6,4 +6,8 @@ export class FoodService {
     foodList = new Subject<string>();  // this is for getting data with 'next' command
     foodList$ = this.foodList.asObservable();       // this is for sending data to the component 
     constructor() { }
+
+    newFood(food:string):void{
+        this.foodList.next(food);
+    }
 }

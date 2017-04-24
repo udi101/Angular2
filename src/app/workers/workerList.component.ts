@@ -19,7 +19,6 @@ export class WorkerListComponent implements OnInit{
 
     ngOnInit() {
         this.workers = this.activatedRoute.snapshot.data['workers']; // טוען נתונים מתוך הריזולב
-        // this.workerService.getworkers().subscribe(data => this.workers = <IWorker[]>data);
     }
     
 

@@ -1,6 +1,49 @@
 <div class="page-header">
   <h4>Container Component</h4>
-  This is communication with @input and @output
+  This is communication with @input and @output <br>
+  It also changes the title after 2 sec's with subsribe to emiter in the service
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    This is: {{title}}
+  </div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+  <button class="btn btn-sm" id="btnTest">Test</button>
+  <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#ngModal">Open Modal</button>
+</div>
+  </div>
+<div class="row">
+  <div class="col-sm-12">
+    <!--כאשר המודל-דיאלוג רשום באותו מקטע של המודל אז מתקבל מודל שאינו נסגר בלחיצה על הרקע-->
+    <div class="modal fade" role="dialog" id="ngModal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          This is the modal header
+        </div>
+        <div class="modal-body">
+          this is the modal body
+        </div>
+        <div class="modal-footer">
+          <div class="text-left" style="float: left">
+            This is the modal footer<br />
+            it is very important to see it eye to eye
+            </div>
+          <button class="btn btn-default btn-sm" data-dismiss="modal">close</button>
+        </div>
+      </div>
+    </div>
+  </div></div>
 </div>
 
-This is: {{title}}
+<div class="row">
+  <div class="col-sm-12">
+    <div highlight="yes">This is highlighted text</div>
+  </div>
+</div>
+<br />
+this is an imported component from BootstrapModule: <br  />
+<!-- שימוש בצבע למודל ע"י אינפוט-->
+<my-modal isOpen="true" modalColor="#2060c0"></my-modal>

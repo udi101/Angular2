@@ -7,7 +7,7 @@
       <div class="form-group" [class.has-error]="eventName.invalid&&eventName.touched">
         <label for="eventName" class="control-label">Event Name</label>
         <em *ngIf="eventName.invalid && eventName.touched">* Required</em>
-        <input type="text" class="form-control input-sm" #eventName=ngModel ngModel name="eventName" id="eventName" required>
+        <input type="text" class="form-control input-sm" #eventName=ngModel exclude ngModel name="eventName" id="eventName" required>
       </div>
       <div class="form-group" [class.has-error]="startDate.invalid && startDate.touched">
         <label for="startDate" class="control-label">Start Date</label>
