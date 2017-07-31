@@ -23,6 +23,8 @@ import {
 import { HighlightDirective } from './nested/highlight.directive';
 
 // jQuery Service
+// tslint:disable-next-line:class-name
+// export class jQuery { }
 export declare let jQuery: any; 
 import { JQ_TOKEN } from './common/index';
 

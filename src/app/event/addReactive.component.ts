@@ -21,12 +21,12 @@ export class AddReactiveComponent implements OnInit {
         Validators.minLength(3),
         this.restrictedWordsValidator(['erez', 'mazor'])
         ]);
-        let startDate = new FormControl('', Validators.required);
-        let endDate = new FormControl('', Validators.required);
-        let eventPrice = new FormControl('', Validators.required)
-        let city = new FormControl('', Validators.required);
-        let street = new FormControl('', Validators.required);
-        let streetNumber = new FormControl('', [Validators.required, Validators.pattern('\\d*$')]);
+        const startDate = new FormControl('', Validators.required);
+        const endDate = new FormControl('', Validators.required);
+        const eventPrice = new FormControl('', Validators.required)
+        const city = new FormControl('', Validators.required);
+        const street = new FormControl('', Validators.required);
+        const streetNumber = new FormControl('', [Validators.required, Validators.pattern('\\d*$')]);
         this.addReactiveForm = new FormGroup({
             eventName: this.eventName,
             startDate: startDate,
